@@ -1,0 +1,61 @@
+.select-users-container
+{
+}
+
+.user-list-container
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #F9F9F9;
+}
+
+ul.user-list
+{
+   background: #F9F9F9;
+   margin: 0px;
+}
+
+ul.user-list li {
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden; 
+    border-bottom: 1px solid #CCC;
+    margin: 0px;
+}
+
+ul.user-list  li div {
+    position: absolute;
+    top: 0px;
+}
+
+ul.user-list li .left {
+    left: 0;
+    width: 200px;
+    font-weight: bold;
+}
+
+ul.user-list li .right {
+    right: 0;
+}
+
+ul.user-list li .center {
+    left: 250px;
+    right: 100px;
+}
+
+ul.user-list li .right img {
+    height: 20px;
+    width: 20px;
+}
+
+ul.user-list li.selected
+{
+    background: #fff2a8;
+}

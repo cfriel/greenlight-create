@@ -1,0 +1,32 @@
+<template name="create_page">
+
+  <div class="span3">
+    <ul id="left-navbar" class="nav nav-tabs nav-stacked">
+      <li><a href="#select-template">Select Template</a></li>
+      <li><a href="#select-collections">Select Collections</a></li>
+      <li><a href="#select-users">Select Users</a></li>
+      <li><a href="#select-url">Select Url</a></li>
+      <li><a href="#pending">Create Site</a></li>
+    </ul>
+  </div>
+
+  <div class="span9">
+
+    <a id="select-template"/>
+    {{> select_template }}
+
+    <a id="select-collections"/>
+    {{> select_collections}}
+
+    <a id="select-users"/>
+    {{> select_users }}
+    
+    <a id="select-url"/>
+    {{> select_url }}
+    
+    <a id="pending"/>
+    {{> pending }}
+
+  </div>
+
+</template>

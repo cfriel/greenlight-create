@@ -1,0 +1,23 @@
+<template name="select_collections">
+  <div class="select-collections-container">
+    <div>
+      <h2>
+	Choose your Data
+      </h2>
+      <p>
+	Select the data collections to use with your template below.
+      </p>
+    </div>
+    <div class="collection-list-container">
+      <ul class="collection-list">
+	{{#each results}}
+	{{#each collections}}
+	<div>
+	  {{> collection_item }}
+	</div>
+	{{/each}}
+	{{/each}}
+      </ul>
+    </div>
+  </div>
+</template>

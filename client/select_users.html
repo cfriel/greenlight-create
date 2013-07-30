@@ -1,0 +1,21 @@
+<template name="select_users">
+  <div class="select-users-container">
+    <div>
+      <h2>
+	Select Users
+      </h2>
+      <p>
+	Choose the users who can access the site
+      </p>
+    </div>
+    <div class="user-list-container">
+      <ul class="user-list">
+	{{#each results}}
+	<div>
+	  {{> user_item }}
+	</div>
+	{{/each}}
+      </ul>
+    </div>
+  </div>
+</template>

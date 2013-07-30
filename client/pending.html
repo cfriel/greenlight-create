@@ -1,0 +1,25 @@
+<template name="pending">
+  <div class="pending-container">
+    <div>
+      <h2>
+	Create your Site
+      </h2>
+      <p>
+	Click create to launch your new site
+      </p>
+    </div>
+    <div id="progress-container">
+      <div class="progress progress-striped active">
+	<div id="progress_bar" class="bar" style="width: 0%;"></div>
+      </div>
+      <span id="progress_text" class="pull-right"></span>
+    </div>
+    <div id="create-buttons">
+      <button id="create" class="btn btn-primary" type="button">
+	<i class="icon-ok icon-white"/>
+	<span>Create</span>
+      </button>
+      <button id="cancel" class="btn" type="button">Cancel</button>
+    </div>
+  </div>
+</template>

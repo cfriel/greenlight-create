@@ -18,7 +18,7 @@ Template.select_template.events({
 Template.select_template.rendered = function(){
     $('#template_container').masonry(
 	{ 
-	    columnWidth: 220
+	    columnWidth: 110
 	}
     );
 }

@@ -1,7 +1,7 @@
 .site_template_item
 {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     background: #DDD;
     margin-top: 20px;
     text-overflow: ellipsis;

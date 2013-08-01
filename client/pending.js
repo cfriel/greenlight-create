@@ -21,6 +21,8 @@ Template.pending.rendered = function() {
 	
 	site.url = $('#prependedInput').val();
 
+	site.template = $('.site_template_item.selected').attr("data-id");
+
 	site.owner = Meteor.userId();
 
 	if(!Sites.findOne({ url : site.url }))

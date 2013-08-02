@@ -4,12 +4,41 @@ Meteor.startup(function(){
 
 });
 
+Meteor.Router.add({
+    '/create/select_users/:page' : function(page)
+    {
+	Session.set("user_page", parseInt(page));
+
+	return 'create_page';
+    }
+});
+
 Template.select_users.results = function()
 {
-    return Meteor.users.find();
+    Pagination.currentPage(Session.get("user_page"));    
+    return Pagination.collection(Meteor.users.find().fetch());
+}
+
+Template.select_users.pagination = function () {
+    // Pagination.links(prependRoute, cursorCount, options);
+    var currentPage = Session.get("user_page");
+    var count = Meteor.users.find().count();
+
+    if(currentPage && count > 0)
+    {
+	return Pagination.links('/create/select_users', count, {currentPage: currentPage, perPage: 10});
+    }
 }
 
 var u = undefined;
+
+Template.select_users.created = function()
+{
+    Pagination.perPage(10);
+    Pagination.style('bootstrap');
+    Session.set("user_page", 1);
+}
+
 
 Template.select_users.rendered = function()
 {
@@ -54,13 +83,10 @@ Template.select_users.rendered = function()
 
     if(!u)
     {
-
 	u = $('#u');
 
 	$('#u').on("change", function(e) { 
 	    console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed}));
-	    // window.location.href = e.val;
 	});
-
     }
 }

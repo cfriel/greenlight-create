@@ -66,21 +66,25 @@ Template.select_collections.events({
     }
 });
 
-Template.select_collections.results = function () {
-
+Template.select_collections.created = function()
+{
     Pagination.perPage(10);
-    Pagination.currentPage(1);
-    
+    Pagination.style('bootstrap');
+    Session.set("collection_page", 1);
+}
+
+Template.select_collections.results = function () 
+{
+    Pagination.currentPage(Session.get("collection_page"));    
     return Pagination.collection(Databases.find({}).fetch());
 }
 
 Template.select_collections.pagination = function(){
-    Pagination.perPage(10);
-    Pagination.currentPage(Session.get("collection_list_page"));
-    var numRecords = Databases.find({}).count();
-
-    if(numRecords != 0)
+    var currentPage = Session.get("collection_page");
+    var count = Databases.find().count();
+    
+    if(currentPage && count > 0)
     {
-	return Pagination.links("/create/collection", numRecords);
+	return Pagination.links('#select_collections', count, {currentPage: currentPage, perPage: 10});
     }
 }

@@ -1,9 +1,3 @@
-SiteTemplates = new Meteor.Collection("site_templates");
-
-Deps.autorun(function(){
-    Meteor.subscribe("site_templates");
-});
-
 Template.select_template.events({
     'click #next' : function(e,t)
     {

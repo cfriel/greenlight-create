@@ -5,33 +5,35 @@ Meteor.startup(function(){
 });
 
 Template.pending.rendered = function() {
+    
     $('#create').click(function(){
 	
 	var site = {};
-
+	
 	site.users = [];
 	site.collections = [];
 	site.url = "";
-
+	
 	var users = $('#u').val().split(",");
 	var collections = $('#c').val().split(",");
-
+	
 	site.users = users;
 	site.collections = collections;
 	
 	site.url = $('#prependedInput').val();
-
+	
 	site.template = $('.site_template_item.selected').attr("data-id");
-
+	
 	site.owner = Meteor.userId();
-
-	if(!Sites.findOne({ url : site.url }))
-	{
-	    Sites.insert(site);
+	
+	Greenlight.register_site(site, function(err, res){
+	    
+	    if(!err)
+	    {
 
 	    $('#create-buttons').hide();
 	    $('#progress-container').show();
-
+	    
 	    setTimeout(function(){
 		$("#progress_text").text("Configuring database dependencies");
 		$("#progress_bar").css("width", "20%");
@@ -53,9 +55,8 @@ Template.pending.rendered = function() {
 		}, 2000);
 	    }, 2000);
 	}
-	else
-	{
-	    
 	}
-    });
-}		       
+	);			   
+    }
+    	       
+		      )}

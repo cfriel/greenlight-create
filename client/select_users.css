@@ -19,6 +19,7 @@ ul.user-list
 {
    background: #F9F9F9;
    margin: 0px;
+   padding-left: 0px;
 }
 
 ul.user-list li {

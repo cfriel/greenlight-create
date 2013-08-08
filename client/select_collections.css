@@ -15,6 +15,7 @@ ul.collection-list
 {
    background: #F9F9F9;
    margin: 0px;
+   padding-left: 0px;
 }
 
 ul.collection-list li {

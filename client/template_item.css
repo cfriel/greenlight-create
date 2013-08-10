@@ -1,7 +1,7 @@
 .site_template_item
 {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 230px;
     background: #DDD;
     margin-top: 20px;
     text-overflow: ellipsis;
@@ -10,6 +10,8 @@
 .site_template_name
 {
     font-weight: bold;
+    margin-top: 10px;
+    padding: 5px;
 }
 
 .site_template_description

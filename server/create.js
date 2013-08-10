@@ -14,12 +14,12 @@ create.prototype.metadata = function()
 }();
 
 
-Greenlight.Create = create.prototype;
+Greenlight.Packages.Create = create.prototype;
 
 Meteor.startup(function(){
     
     console.log("loading create package");
     
-    Greenlight.register_template(name, version, Greenlight.Create);
+    Greenlight.register_template(name, version, Greenlight.Packages.Create);
     
 });

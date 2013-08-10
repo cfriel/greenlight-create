@@ -16,9 +16,12 @@ Template.select_collections.rendered = function()
 	    {
 		var collection = datasets[i].collection;
 		var database = datasets[i].database;
-		
+		var name = datasets[i].name;
+
 		if(query.term.length == 0 || 
-		   item.toUpperCase().indexOf(query.term.toUpperCase()) >= 0 ){
+		   collection.toUpperCase().indexOf(query.term.toUpperCase()) >= 0 ||
+		   database.toUpperCase().indexOf(query.term.toUpperCase()) >= 0 ||
+		   name.toUpperCase().indexOf(query.term.toUpperCase()) >= 0){
 
 		    data.results.push({id: datasets[i]._id, text: 
 				       database + "." + collection });

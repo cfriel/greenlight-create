@@ -20,6 +20,6 @@ Meteor.startup(function(){
     
     console.log("loading create package");
     
-    Greenlight.register_template(name, version, Greenlight.Packages.Create);
+    Greenlight.register_package(name, version, Greenlight.Packages.Create);
     
 });

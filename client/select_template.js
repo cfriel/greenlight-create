@@ -21,13 +21,13 @@ Template.select_template.results = function () {
     Pagination.perPage(10);
     Pagination.currentPage(1);
     
-    return Pagination.collection(SiteTemplates.find({}).fetch());
+    return Pagination.collection(Greenlight.Packages.find({}).fetch());
 }
 
 Template.select_template.pagination = function(){
     Pagination.perPage(10);
     Pagination.currentPage(Session.get("choose_template_page"));
-    var numRecords = SiteTemplates.find({}).count();
+    var numRecords = Greenlight.Packages.find({}).count();
 
     if(numRecords != 0)
     {

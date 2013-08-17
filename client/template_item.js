@@ -3,7 +3,7 @@ Template.site_template_item.events({
     {
 	$('.site_template_item').removeClass("selected");
 	$(e.target).parent().addClass("selected");
-	console.log(t);
+	Greenlight.log(t);
     }
 });
 

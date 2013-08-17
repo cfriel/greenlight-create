@@ -3,9 +3,14 @@ Package.describe({
 });
 
 Package.on_use(function (api, where) {
+
     api.use('router', ['client', 'server']);
     api.use(['templating'], 'client');
+    api.use('deps', ['client', 'server']);
+    api.use('session', ['client', 'server']);
+    api.use('greenlight', ['client','server']);
 
+    api.add_files('lib/jquery.masonry.js', 'client');
     api.add_files('client/collection_item.css', 'client');
     api.add_files('client/collection_item.html', 'client');
     api.add_files('client/collection_item.js', 'client');

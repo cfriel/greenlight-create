@@ -86,7 +86,7 @@ Template.select_users.rendered = function()
 	u = $('#u');
 
 	$('#u').on("change", function(e) { 
-	    console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed}));
+	    Greenlight.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed}));
 	});
     }
 }

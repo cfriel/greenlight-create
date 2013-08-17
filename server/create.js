@@ -18,7 +18,7 @@ Greenlight.Packages.Create = create.prototype;
 
 Meteor.startup(function(){
     
-    console.log("loading create package");
+    Greenlight.log("loading create package");
     
     Greenlight.register_package(name, version, Greenlight.Packages.Create);
     

@@ -37,7 +37,7 @@ Template.select_collections.rendered = function()
 	c = $('#c');
 		
 	$('#c').on("change", function(e) { 
-	    console.log(
+	    Greenlight.log(
 		"change "+
 		    JSON.stringify({val:e.val, added:e.added, removed:e.removed})
 	    );

@@ -8,6 +8,6 @@ Template.user_item.events({
     {
 	
 	$(e.target).parent().parent().toggleClass("selected");
-	console.log(t);
+	Greenlight.log(t);
     }
 });
